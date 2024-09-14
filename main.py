@@ -27,10 +27,16 @@ from PyQt5.QtCore import Qt
 class JarvisApp(QWidget):
     def __init__(self):
         super().__init__()
+        
+        # Remove the maximize button
+        self.setWindowFlags(Qt.Window | Qt.CustomizeWindowHint | Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint)
 
         # Set up the main window
         self.setWindowTitle("Jarvis - Virtual Assistant")
-        self.setGeometry(100, 100, 500, 700)
+        # self.setGeometry(100, 100, 500, 700)
+        
+        # fixed sized window
+        self.setFixedSize(550, 850)
 
         # Initialize pygame mixer for audio playback
         pygame.mixer.init()
